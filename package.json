@@ -1,0 +1,27 @@
+{
+  "name": "abv-bc-session1",
+  "version": "1.0.0",
+  "description": "An app to check an array and evaluate if it is AP or GP",
+  "main": "aritGeo.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RodneyOssai/abv-bc-session1.git"
+  },
+  "author": "Nduka Ossai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RodneyOssai/abv-bc-session1/issues"
+  },
+  "homepage": "https://github.com/RodneyOssai/abv-bc-session1#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "jasmine-node": "^1.14.5",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
