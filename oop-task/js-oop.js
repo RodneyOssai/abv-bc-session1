@@ -1,15 +1,34 @@
+//Animal Object, AKA parent class
+		let Animal = function () {
+//All animals have name
+		    this.name = 'unknown'; 
 
-function Animal(animalName,animalAge,animalWeight){ // A constructor which is  basically our class
-		this.name = animalName;
-		this.age = animalAge;
-		this.weight=animalWeight; 
-};
-Animal.prototype.makeSound = function("sound"){ //Dog can make sound , Cat can make sound they both have access to the prototype therefore Inheritance
-				this.sound = sound
-		}
-var Lion = function(){ // another construcror which nasically inherits from Animal
-	Animal.apply(this, arguments); 
-	this.name = name;
-	Lion.prototype = Object.create(Animal.prototype); //all methods availiable to Animal prototype is now availiable to Lion prototype
-};
-// Create a certain type of Animal called lizard that will have certain functionalities that the normal doesnt
+		    this.getName = function () {
+		        return this.name;
+		    }
+
+		    return this;
+		};
+
+//  Dog object , AKA child class		
+		let Dog = function (tailColor) {
+		    this.name = "Squishy"; // assigning name specific to this Animal
+
+		    this.bark = function () {
+		        return 'WOOF';
+		    }  
+		    this.tailDecoration = function(){console.log(tailColor)}
+
+		    return this;
+		};
+//All methods availiable to Animal is now availiable to Dog.prototype
+		Dog.prototype = new Animal();
+
+// Creating an instance of Dog with a tail color of green		
+		let dog = new Dog("Green");
+
+// Inheritance beecause DOG class inherits getName from ANIMAL
+		console.log(dog.getName()); 
+
+//Encapsulation and abstraction because it prints Green to the screen when did not access to the tailColor variable directly even if tailDecoration is using it.
+		console.log(dog.tailDecoration());
